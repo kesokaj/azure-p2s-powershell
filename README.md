@@ -13,4 +13,11 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
 -HashAlgorithm sha256 -KeyLength 2048 `
 -CertStoreLocation "Cert:\CurrentUser\My" `
 -Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
+
+
+RUN > certmgr.msc
+
+
+Right-click on "Root" -> Export -> no private key -> base64 der format.
+Copy content to P2S gateway.
 ````
